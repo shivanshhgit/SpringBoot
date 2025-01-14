@@ -13,20 +13,21 @@ import jakarta.persistence.Table;
 @Table
 public class Student {
     @Id
-    @SequenceGenerator(
-        name = "student_sequence",
-        sequenceName = "student_sequence",
-        allocationSize = 1
-    )
-    @GeneratedValue(
-        strategy = GenerationType.SEQUENCE,
-        generator = "student_sequence"
-    )
+    @SequenceGenerator(name = "student_sequence", sequenceName = "student_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_sequence")
     private Long id;
     private String name;
     private String email;
     private LocalDate dob;
     private Integer age;
+
+    public Student() {
+        this.id = 0L;
+        this.name = "";
+        this.email = "";
+        this.dob = LocalDate.now();
+        this.age = 0;
+    }
 
     public Student(Long id, String name, String email, LocalDate dob, Integer age) {
         this.id = id;
