@@ -6,3 +6,6 @@ Content-Type: application/json
     "email": "abc@gmail.com",
     "dob": "2002-12-09"
 }
+
+###
+DELETE http://localhost:8080/api/v1/student/1
